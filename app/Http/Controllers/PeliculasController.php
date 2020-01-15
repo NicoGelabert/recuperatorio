@@ -9,7 +9,7 @@ use App\Pelicula;
 class PeliculasController extends Controller
 {
     public function index(){
-        $peliculas = Pelicula::orderBy('title', 'asc')->paginate(10);
+        $peliculas = Pelicula::orderBy('title', 'asc')->paginate(12);
         return view ("listadopeliculas")->with("peliculas", $peliculas);
     }
 

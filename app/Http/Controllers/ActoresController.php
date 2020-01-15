@@ -9,7 +9,7 @@ use App\Actor;
 class ActoresController extends Controller
 {
     public function index(){
-        $actores = Actor::orderBy('first_name', 'asc')->Paginate(10);
+        $actores = Actor::orderBy('first_name', 'asc')->Paginate(12);
         return view ("listadoactores")->with("actores", $actores);
     }
 

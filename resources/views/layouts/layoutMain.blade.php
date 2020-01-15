@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href=" {{ asset('/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href=" {{ asset('/css/style.css') }}">
 
     <title>{{ config('app.name', 'Ticket') }}</title>
 </head>
     <body>
 
-        @include('partials.navbar')
-        @yield('content')
-        
+        <div class="container-fluid">
+            @include('partials.navbar')
+            @yield('content')
+        </div>
 
-       </body>
+    </body>
 </html>
