@@ -26,7 +26,7 @@
                         <p style="text-align:center">No hay películas asociadas a este género</p>
                         </div>
                         <div class="card-boton">
-                            <a  href="{{ url('/generos') }}" class="btn btn-primary boton">Volver a géneros</a>
+                            <a  href="/generos" class="btn btn-primary boton">Volver a géneros</a>
                         </div>
                     </div>
                 </div>

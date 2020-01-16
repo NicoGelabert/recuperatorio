@@ -2,9 +2,14 @@
 
 @section('content')
     <h1>Listado de actores</h1>
+    @if (Route::has('login'))
+        @auth
         <div style="text-align:center">
-            <a class="btn btn-primary" href="/actores/new">Cargar nuevo actor</a>
+            <a class="btn btn-primary" href="{{ url('/actores/new') }}">Cargar nuevo actor</a>
         </div>
+        
+        @endauth
+    @endif
     <ul>
         <div class="row tarjetas">
         @foreach ($actores as $actor)

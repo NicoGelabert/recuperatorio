@@ -6,6 +6,9 @@ body{
     color: #333;
   }
 
+.row{
+  margin: 0 auto;
+}
 .container-fluid{
   padding: 0;
 }
@@ -44,6 +47,82 @@ h1{
 
 .detalle-pelicula{
   text-align: center;
+}
+
+.forms{
+  line-height: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.forms p{
+  margin: 0 auto;
+}
+.forms-2{
+  margin: 0 auto;
+}
+
+.forms .card-boton{
+  margin-top: 30px;
+}
+.form-check{
+  margin-top: 30px;
+}
+.form-check-input{
+  margin-left: 0;
+  margin-top: 10px;
+}
+.form-check-label{
+  margin-left: 20px;
+}
+input[type=text], input[type=email], input[type=password]{
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 50px;
+  padding-left: 10px;
+  margin-top: 30px;
+  color: #333;
+}
+
+input[type=date]{
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 50px;
+  padding-left: 10px;
+  margin-top: 30px;
+  color: #ccc;
+}
+input[type="date"]:before {
+  content: attr(placeholder) !important;
+  color: #ccc;
+}
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+  content: "";
+}
+input:focus, input.form-control:focus {
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #ccc;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color: #ccc;
+ opacity: 1 /* esto es porque Firefox le reduce la opacidad por defecto */;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color: #ccc;
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #ccc;
 }
 
 @media only screen and (min-width: 600px){

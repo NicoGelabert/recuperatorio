@@ -13,7 +13,7 @@
                         
                         @if ($pelicula->actores-> count() > 0)
                             @foreach ($pelicula->actores as $actor)
-                            <a href="/actores/{{$actor->id}}">{{ $actor->first_name }} {{ $actor->last_name }}</a><br>
+                            <a href="/actores/{{$actor->id}}">{{ $actor->getFullName() }}</a><br>
                             @endforeach
                         @else
                             No hay actores cargados
@@ -26,9 +26,14 @@
                         @else
                         <p class="card-text"><b>Género:</b><br>No tiene género asociado</p>
                         @endif
+
+                        @if (Route::has('login'))
+                        @auth
                         <div style="text-align:center">
                             <a class="btn btn-primary" href="/peliculas/{{$pelicula->id}}/edit">Editar película</a>
                         </div>
+                        @endauth
+                        @endif
                     </div>
                 </div>
             </div>

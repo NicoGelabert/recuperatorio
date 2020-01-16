@@ -2,14 +2,32 @@
 
 @section('content')
     <h1>Alta de actor</h1>
-    <form action="/actores" method="post">
-    @csrf
-    <label for="first_name">Nombre:</label>
-    <input type="text" name="first_name">
-    <label for="last_name">Apellido:</label>
-    <input type="text" name="last_name">
-    <label for="rating">Rating:</label>
-    <input type="text" name="rating">
-    <input type="submit" name="" value="Agregar actor">
-    </form>
+    <div class="row forms">
+        <div class="col-10 col-sm-10 col-md-8 col-lg-4">
+            
+        <form action="{{ url('/actores') }}" method="post">
+        @csrf
+
+            <div class="col-12">
+            <input type="text" placeholder="Nombre" name="first_name">
+            <p>{{$errors->first('first_name')}}</p>
+            </div>
+
+            <div class="col-12">
+            <input type="text" placeholder="Apellido" name="last_name">
+            <p>{{$errors->first('last_name')}}</p>
+            </div>
+
+            <div class="col-12">
+            <input type="text" placeholder="Rating" name="rating">
+            <p>{{$errors->first('rating')}}</p>
+            </div>
+
+            <div class="card-boton">
+            <input class="btn btn-primary boton" type="submit" name="" value="Agregar actor">
+            </div>
+
+            </form>
+        </div>
+    </div>
 @endsection 

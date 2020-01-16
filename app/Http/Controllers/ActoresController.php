@@ -10,11 +10,11 @@ class ActoresController extends Controller
 {
     public function index(){
         $actores = Actor::orderBy('first_name', 'asc')->Paginate(12);
-        return view ("listadoactores")->with("actores", $actores);
+        return view ("actores.listadoactores")->with("actores", $actores);
     }
 
     public function detalle(Actor $actor){
-        return view ("detalleactor")->with("actor", $actor);
+        return view ("actores.detalleactor")->with("actor", $actor);
     }
 
 
@@ -39,16 +39,8 @@ class ActoresController extends Controller
             "last_name" => "required|string|min:1|max:255",
             "rating"=> "required|numeric"
         ];
-        $mensaje = [
-            "required" => "El campo :attribute es obligatorio.",
-            "min" => "El campo :attribute no puede ser menor a :min.",
-            "max" => "El campo :attribute no debe mayor a :max.",
-            "numeric" => "El campo :attribute debe ser numérico.",
-            "integer" => "El campo :attribute debe ser entero.",
-            "date" => "El campo :attribute debe ser una fecha."
-        ];
 
-        $this->validate($request, $reglas, $mensaje);
+        $this->validate($request, $reglas);
 
         Actor::create($request->all());
     }

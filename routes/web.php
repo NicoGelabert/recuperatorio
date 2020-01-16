@@ -26,7 +26,7 @@ Route::get('/actores/{actor}', 'ActoresController@detalle');
 /*--------Peliculas--------*/
 Route::get('/peliculas', 'PeliculasController@index');
 Route::get('/peliculas/{pelicula}', 'PeliculasController@detalle');
-Route::get('/peliculas/{pelicula}/edit','PeliculasController@edit');//->middleware('auth','role:1');
+Route::get('/peliculas/{pelicula}/edit','PeliculasController@edit');
 Route::patch('/peliculas/{idpelicula}', 'PeliculasController@update');
 /*--------Generos--------*/
 Route::get('/generos', 'GenerosController@index');
