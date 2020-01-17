@@ -1,6 +1,7 @@
 @extends('layouts.layoutMain')
 
 @section('content')
+<main>
     <h1>{{ __('Log in') }}</h1>
     <div class="row forms">
         <div class="col-10 col-sm-10 col-md-8 col-lg-4">
@@ -9,12 +10,14 @@
         @csrf
 
             <div class="col-12">
-                <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="{{ __('E-Mail') }}">
+                <label for="email">{{ __('E-Mail') }}</label>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="ejemplo@email.com">
                 <p>{{$errors->first('email')}}</p>
             </div>
 
             <div class="col-12">
-                <input id="password" type="password" name="password" autocomplete="current-password" placeholder="{{ __('Contraseña') }}">
+                <label for="email">{{ __('Contraseña') }}</label>
+                <input id="password" type="password" name="password" autocomplete="current-password" placeholder="8 caracteres mínimo">
                 <p>{{$errors->first('password')}}</p>
             </div>
 
@@ -41,4 +44,5 @@
             </form>
         </div>
     </div>
+</main>
 @endsection 

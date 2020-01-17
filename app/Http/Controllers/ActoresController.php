@@ -37,11 +37,13 @@ class ActoresController extends Controller
         $reglas = [
             "first_name" => "required|string|min:1|max:255",
             "last_name" => "required|string|min:1|max:255",
-            "rating"=> "required|numeric"
+            "rating" => "required|numeric",
+            "favorite_movie_id" => "required|integer|max:21"
         ];
 
         $this->validate($request, $reglas);
 
         Actor::create($request->all());
+        return redirect('/actores');
     }
 }

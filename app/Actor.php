@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Actor extends Model
 {
     public $table = "actors";
-    public $guarded = [];
+    public $fillable = ["first_name", "last_name", "rating", "favorite_movie_id"];
 
     public function peliculas(){
         return $this->belongsToMany(Pelicula::class, "actor_movie", "actor_id", "movie_id");

@@ -1,6 +1,7 @@
 @extends('layouts.layoutMain')
 
 @section('content')
+<main>
     <h1>Editar película</h1>
     <div class="row forms">
         <div class="col-10 col-sm-10 col-md-8 col-lg-4">
@@ -8,36 +9,42 @@
             @method('PATCH')
             @csrf
             <div class="col-12">
-            <input type="text" placeholder="Título" name="title" value="{{old('title')}}">
+            <label for="title">Título</label>
+            <input type="text" placeholder="{{$pelicula->title}}" name="title" value="{{old('title')}}">
             <p>{{$errors->first('title')}}</p>
             </div>
             
             <div class="row forms-2">
             <div class="col-6">
-            <input type="text" placeholder="Rating" name="rating" value="{{old('rating')}}">
+            <label for="title">Rating</label>
+            <input type="text" placeholder="{{$pelicula->rating}}" name="rating" value="{{old('rating')}}">
             <p>{{$errors->first('rating')}}</p>
             </div>
             
             <div class="col-6">
-            <input type="text" placeholder="Premios" name="awards" value="{{old('awards')}}">
+            <label for="title">Premios</label>
+            <input type="text" placeholder="{{$pelicula->awards}}" name="awards" value="{{old('awards')}}">
             <p>{{$errors->first('awards')}}</p>
             </div>
             </div>
             
             <div class="row forms-2">
             <div class="col-6">
-            <input type="date" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Fecha de estreno" name="release_date" value="{{old('release_date')}}">
+            <label for="title">Fecha de estreno</label>
+            <input type="date" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="{{\Carbon\Carbon::parse($pelicula->release_date)->locale('es')->format('d-m-Y')}}" name="release_date" value="{{old('release_date')}}">
             <p>{{$errors->first('release_date')}}</p>
             </div>
             
             <div class="col-6">
-            <input type="text" placeholder="Duración en minutos" name="length" value="{{old('length')}}">
+            <label for="title">Duración en minutos</label>
+            <input type="text" placeholder="{{$pelicula->length}}" name="length" value="{{old('length')}}">
             <p>{{$errors->first('length')}}</p>
             </div>
             </div>
 
             <div class="col-12">
-            <input type="text" placeholder="Género" name="genre_id"  value="{{old('genre_id')}}">
+            <label for="title">Género</label>
+            <input type="text" placeholder="{{$pelicula->genre_id}}" name="genre_id"  value="{{old('genre_id')}}">
             <p>{{$errors->first('genre_id')}}</p>
             <!-- <select class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" name="genre_id">
             <option value="">Género</option>
@@ -70,4 +77,5 @@
             </form>
         </div>
     </div>
+</main>
 @endsection 

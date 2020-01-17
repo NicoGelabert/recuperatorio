@@ -1,6 +1,7 @@
 @extends('layouts.layoutMain')
 
 @section('content')
+<main>
     <h1>Listado de actores</h1>
     @if (Route::has('login'))
         @auth
@@ -33,4 +34,5 @@
         {{ $actores->links() }}
         </div>
     </ul>
+</main>
 @endsection

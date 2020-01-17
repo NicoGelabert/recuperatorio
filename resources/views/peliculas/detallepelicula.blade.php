@@ -1,6 +1,7 @@
 @extends('layouts.layoutMain')
 
 @section('content')
+<main>
     <h1>{{$pelicula->title}}</h1>
         <div class="row tarjetas">
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
@@ -38,4 +39,5 @@
                 </div>
             </div>
         </div>
+</main>
 @endsection

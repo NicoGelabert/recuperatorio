@@ -1,11 +1,50 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 body{
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 200px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     color: #333;
   }
-
+main{
+  padding-bottom:50px;
+}
+  h1{
+    padding-top: 30px;
+  }
+  h2{
+    margin-top: 50px;
+    font-weight: bold;
+    font-style: italic;
+  }
+  ul.principal{
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 50px 0 -30px 0;
+  }
+  ul.principal li{
+    list-style: none;
+    text-align: center;
+    margin-bottom: 50px;
+    /* float: left; */
+  }
+  ul.principal li a{
+    color: #343a40;
+    text-decoration: none;
+    transition: .5s;
+  }
+  ul.principal li a:hover{
+    color: #aaa;
+    transition: .5s;
+  }
 .row{
   margin: 0 auto;
 }
@@ -15,8 +54,13 @@ body{
 .tarjetas{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   margin: 15px;
+}
+.sin_peliculas{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .card-boton{
   padding: 0 0 1.25rem 1.25rem;
@@ -74,6 +118,7 @@ h1{
 }
 .form-check-label{
   margin-left: 20px;
+  margin-top:0;
 }
 input[type=text], input[type=email], input[type=password]{
   width: 100%;
@@ -81,17 +126,20 @@ input[type=text], input[type=email], input[type=password]{
   border: 1px solid #ccc;
   height: 50px;
   padding-left: 10px;
-  margin-top: 30px;
   color: #333;
 }
-
+label{
+  font-weight: bold;
+  margin-top: 30px;
+  padding-left: 10px;
+  line-height: 0;
+}
 input[type=date]{
   width: 100%;
   border-radius: 10px;
   border: 1px solid #ccc;
   height: 50px;
   padding-left: 10px;
-  margin-top: 30px;
   color: #ccc;
 }
 input[type="date"]:before {
@@ -123,6 +171,50 @@ input:focus, input.form-control:focus {
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
  color: #ccc;
+}
+footer {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  height: 200px;
+  padding: 20px 0;
+  background-color: #343a40;
+}
+ul.footer{
+  margin: 15px 0 0 0;
+
+}
+ul.footer li{
+  text-decoration: none;
+  list-style: none;
+  text-align: right;
+  text-transform: uppercase;
+}
+ul.footer li a{
+  color: #aaa;
+}
+ul.footer li a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+footer h2{
+  color:#ccc;
+}
+footer p, i{
+  color:#ccc;
+}
+.footer{
+  text-align: center;
+}
+.redes{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footerbrand{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (min-width: 600px){
@@ -159,5 +251,11 @@ input:focus, input.form-control:focus {
   .card-boton{
     height: 50px;
     padding-left: 1.25rem;
+  }
+  .footer{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }

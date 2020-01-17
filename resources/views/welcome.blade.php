@@ -1,33 +1,35 @@
 @extends('layouts.layoutMain')
 
 @section('content')
-    <h1>Alta de actor</h1>
-    <div class="row forms">
-        <div class="col-10 col-sm-10 col-md-8 col-lg-4">
-            
-        <form action="{{ url('/actores') }}" method="post">
-        @csrf
+<main>
+    <h1>Bienvenidos</h1>
+    <div class="row">
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-10">
+            <ul class="row principal">
+                <li class="col-12 col-sm-12 col-md-3 col-lg-3">
+                <a href="{{ url('/peliculas') }}">
+                <i class="fas fa-play-circle fa-7x"></i>
+                <h2>Películas</h2>
+                </a>
+                </li>
 
-            <div class="col-12">
-            <input type="text" placeholder="Nombre" name="first_name">
-            <p>{{$errors->first('first_name')}}</p>
-            </div>
+                <li class="col-12 col-sm-12 col-md-3 col-lg-3">
+                <a href="{{ url('/actores') }}">
+                <i class="fas fa-star fa-7x"></i>
+                <h2>Actores</h2>
+                </a>
+                </li>
 
-            <div class="col-12">
-            <input type="text" placeholder="Apellido" name="last_name">
-            <p>{{$errors->first('last_name')}}</p>
-            </div>
-
-            <div class="col-12">
-            <input type="text" placeholder="Rating" name="rating">
-            <p>{{$errors->first('rating')}}</p>
-            </div>
-
-            <div class="card-boton">
-            <input class="btn btn-primary boton" type="submit" name="" value="Agregar actor">
-            </div>
-
-            </form>
+                <li class="col-12 col-sm-12 col-md-3 col-lg-3">
+                <a href="{{ url('/generos') }}">
+                <i class="fas fa-icons fa-7x"></i>
+                <h2>Géneros</h2>
+                </a>
+                </li>
+            </ul>
         </div>
     </div>
+</main>
 @endsection 

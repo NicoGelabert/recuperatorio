@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Genero extends Model
 {
     public $table = "genres";
-    public $guarded = [];
+    public $fillable = ["name", "ranking", "active"];
 
     public function peliculas(){
         return $this->hasMany("App\Pelicula", "genre_id");

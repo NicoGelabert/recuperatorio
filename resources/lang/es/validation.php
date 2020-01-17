@@ -149,6 +149,7 @@ return [
         'last_name' => 'apellido',
         'name'  => 'nombre',
         'password' => 'contraseña',
+        'favorite_movie_id' => 'película favorita'
     ],
 
 ];
